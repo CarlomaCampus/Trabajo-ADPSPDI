@@ -54,8 +54,6 @@ public class LoginController extends Application {
 
 				case "200":
 					((Stage) username.getScene().getWindow()).close();
-					// try { new ApplicationController().start(new Stage()); } catch (Exception e)
-					// {e.printStackTrace(); }
 					Main.startApplication();
 					break;
 				case "401":

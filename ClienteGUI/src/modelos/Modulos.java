@@ -23,6 +23,11 @@ public class Modulos implements java.io.Serializable {
 		this.siglas = siglas;
 	}
 	
+	public Modulos(String nombre, String siglas) {
+		this.nombre = nombre;
+		this.siglas = siglas;
+	}
+	
 	public Modulos(Cursos cursos, String nombre, String siglas, Date fechaAlta) {
 		this.cursos = cursos;
 		this.nombre = nombre;
@@ -69,7 +74,7 @@ public class Modulos implements java.io.Serializable {
 		this.siglas = siglas;
 	}
 
-	public Date getFechaAlta() {
+	public Date getfechaAlta() {
 		return this.fechaAlta;
 	}
 
@@ -81,7 +86,6 @@ public class Modulos implements java.io.Serializable {
 	public Integer getIdCurso() {
 		return idCurso;
 	}
-
 
 	public void setIdCurso(Integer idCurso) {
 		this.idCurso = idCurso;

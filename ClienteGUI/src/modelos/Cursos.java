@@ -20,13 +20,22 @@ public class Cursos implements java.io.Serializable {
 		this.idCurso = idCurso;
 		this.fechaAlta = fechaAlta;
 	}
-
-
+	
+	public Cursos(String nombre, Integer idCiclo) {//este no sé si se usa, comprobar luego
+		this.idCiclo = idCiclo;
+		this.nombre = nombre;
+	}
+	
+	public Cursos(String nombre) {
+		this.nombre = nombre;
+	}
+	
 	
 	public Cursos(Ciclos ciclos, String nombre) {
 		this.ciclos = ciclos;
 		this.nombre = nombre;
 	}
+
 
 	public Integer getIdCurso() {
 		return this.idCurso;

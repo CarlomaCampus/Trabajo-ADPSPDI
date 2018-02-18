@@ -156,19 +156,18 @@
                   </Pane>
                </content>
             </Tab>
-            <Tab text="Editar">
+            <Tab onSelectionChanged="#tab3changed" text="Editar">
                <content>
                   <Pane prefHeight="489.0" prefWidth="710.0">
                      <children>
-                        <RadioButton fx:id="rbalumnoTab2" layoutX="168.0" layoutY="46.0" mnemonicParsing="false" onAction="#rbalumnolistenerTab2" text="Alumno">
+                        <RadioButton fx:id="rbalumnoTab2" layoutX="214.0" layoutY="47.0" mnemonicParsing="false" onAction="#rbalumnolistenerTab2" text="Alumno">
                            <toggleGroup>
                               <ToggleGroup fx:id="elegir1" />
                            </toggleGroup>
                         </RadioButton>
-                        <RadioButton fx:id="rbcicloTab2" layoutX="268.0" layoutY="46.0" mnemonicParsing="false" onAction="#rbciclolistenerTab2" text="Ciclo" toggleGroup="$elegir1" />
-                        <RadioButton fx:id="rbcursoTab2" layoutX="368.0" layoutY="46.0" mnemonicParsing="false" onAction="#rbcursolistenerTab2" text="Curso" toggleGroup="$elegir1" />
-                        <RadioButton fx:id="rbmatriculaTab2" layoutX="468.0" layoutY="46.0" mnemonicParsing="false" onAction="#rbmatriculalistenerTab2" text="Matrícula" toggleGroup="$elegir1" />
-                        <RadioButton fx:id="rbmoduloTab2" layoutX="568.0" layoutY="46.0" mnemonicParsing="false" onAction="#rbmodulolistenerTab2" text="Módulo" toggleGroup="$elegir1" />
+                        <RadioButton fx:id="rbcicloTab2" layoutX="314.0" layoutY="47.0" mnemonicParsing="false" onAction="#rbciclolistenerTab2" text="Ciclo" toggleGroup="$elegir1" />
+                        <RadioButton fx:id="rbcursoTab2" layoutX="414.0" layoutY="47.0" mnemonicParsing="false" onAction="#rbcursolistenerTab2" text="Curso" toggleGroup="$elegir1" />
+                        <RadioButton fx:id="rbmoduloTab2" layoutX="514.0" layoutY="47.0" mnemonicParsing="false" onAction="#rbmodulolistenerTab2" text="Módulo" toggleGroup="$elegir1" />
                         <Button fx:id="editaralumno" layoutX="609.0" layoutY="420.0" mnemonicParsing="false" onAction="#editaralumnolistener" text="EDITAR ALUMNO" visible="false">
                            <font>
                               <Font size="18.0" />
@@ -232,29 +231,6 @@
                            </font>
                         </Text>
                         <TextField fx:id="nombrecursoTab2" layoutX="277.0" layoutY="377.0" visible="false" />
-                        <Text fx:id="idciclocursotextTab2" layoutX="426.0" layoutY="397.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ciclo (id)" textAlignment="RIGHT" visible="false" wrappingWidth="108.65283203125">
-                           <font>
-                              <Font size="19.0" />
-                           </font>
-                        </Text>
-                        <TextField fx:id="idciclocursoTab2" layoutX="554.0" layoutY="377.0" visible="false" />
-                        <Button fx:id="editarmatricula" layoutX="599.0" layoutY="420.0" mnemonicParsing="false" onAction="#editarmatriculalistener" text="EDITAR MATRÍCULA" visible="false">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                        </Button>
-                        <Text fx:id="idalumnomatriculatextTab2" layoutX="159.0" layoutY="397.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Alumno (id)" textAlignment="RIGHT" visible="false" wrappingWidth="108.65283203125">
-                           <font>
-                              <Font size="19.0" />
-                           </font>
-                        </Text>
-                        <TextField fx:id="idalumnomatriculaTab2" layoutX="277.0" layoutY="377.0" visible="false" />
-                        <Text fx:id="idmodulomatriculatextTab2" layoutX="426.0" layoutY="397.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Módulo (id)" textAlignment="RIGHT" visible="false" wrappingWidth="108.65283203125">
-                           <font>
-                              <Font size="19.0" />
-                           </font>
-                        </Text>
-                        <TextField fx:id="idmodulomatriculaTab2" layoutX="554.0" layoutY="377.0" visible="false" />
                         <Button fx:id="editarmodulo" layoutX="608.0" layoutY="420.0" mnemonicParsing="false" onAction="#editarmodulolistener" text="EDITAR MÓDULO" visible="false">
                            <font>
                               <Font size="18.0" />
@@ -272,13 +248,7 @@
                            </font>
                         </Text>
                         <TextField fx:id="siglasmoduloTab2" layoutX="554.0" layoutY="377.0" visible="false" />
-                        <Text fx:id="idcursomodulotextTab2" layoutX="297.0" layoutY="458.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Curso (id)" textAlignment="RIGHT" visible="false" wrappingWidth="108.65283203125">
-                           <font>
-                              <Font size="19.0" />
-                           </font>
-                        </Text>
-                        <TextField fx:id="idcursomoduloTab2" layoutX="411.0" layoutY="438.0" prefHeight="25.0" prefWidth="148.0" visible="false" />
-                        <TableView fx:id="tablealumnosTab2" layoutX="29.0" layoutY="90.0" prefHeight="219.0" prefWidth="782.0" visible="false">
+                        <TableView fx:id="tablealumnosTab2" layoutX="29.0" layoutY="90.0" onMouseClicked="#alumnoseleccionado" prefHeight="219.0" prefWidth="782.0" visible="false">
                           <columns>
                             <TableColumn fx:id="colidalumnoTab2" prefWidth="43.0" text="ID" />
                             <TableColumn fx:id="colnombrealumnoTab2" prefWidth="195.0" text="Nombre" />
@@ -288,7 +258,7 @@
                               <TableColumn fx:id="coldnialumnoTab2" minWidth="8.0" prefWidth="132.0" text="DNI" />
                           </columns>
                         </TableView>
-                        <TableView fx:id="tableciclosTab2" layoutX="29.0" layoutY="90.0" prefHeight="219.0" prefWidth="782.0" visible="false">
+                        <TableView fx:id="tableciclosTab2" layoutX="29.0" layoutY="90.0" onMouseClicked="#cicloseleccionado" prefHeight="219.0" prefWidth="782.0" visible="false">
                            <columns>
                               <TableColumn fx:id="colidcicloTab2" prefWidth="84.0" text="ID" />
                               <TableColumn fx:id="colnombrecicloTab2" prefWidth="367.0" text="Nombre" />
@@ -296,7 +266,7 @@
                               <TableColumn fx:id="colfechacicloTab2" prefWidth="223.0" text="Fecha de alta" />
                            </columns>
                         </TableView>
-                        <TableView fx:id="tablecursosTab2" layoutX="29.0" layoutY="90.0" prefHeight="219.0" prefWidth="782.0" visible="false">
+                        <TableView fx:id="tablecursosTab2" layoutX="29.0" layoutY="90.0" onMouseClicked="#cursoseleccionado" prefHeight="219.0" prefWidth="782.0" visible="false">
                            <columns>
                               <TableColumn fx:id="colidcursoTab2" prefWidth="75.0" text="ID" />
                               <TableColumn fx:id="colnombrecursoTab2" minWidth="0.0" prefWidth="325.0" text="Nombre" />
@@ -304,15 +274,7 @@
                               <TableColumn fx:id="colidciclocursoTab2" minWidth="0.0" prefWidth="165.0" text="ID del Ciclo" />
                            </columns>
                         </TableView>
-                        <TableView fx:id="tablematriculasTab2" layoutX="29.0" layoutY="90.0" prefHeight="219.0" prefWidth="782.0" visible="false">
-                           <columns>
-                              <TableColumn fx:id="colidalumnomatriculaTab2" prefWidth="150.0" text="ID del Alumno" />
-                              <TableColumn fx:id="colidmodulomatriculaTab2" minWidth="0.0" prefWidth="151.0" text="ID del Módulo" />
-                              <TableColumn fx:id="colfechaaltamatriculaTab2" minWidth="0.0" prefWidth="253.0" text="Fecha de alta" />
-                              <TableColumn fx:id="colfechabajamatriculaTab2" minWidth="0.0" prefWidth="226.0" text="Fecha de baja" />
-                           </columns>
-                        </TableView>
-                        <TableView fx:id="tablemodulosTab2" layoutX="29.0" layoutY="90.0" prefHeight="219.0" prefWidth="782.0" visible="false">
+                        <TableView fx:id="tablemodulosTab2" layoutX="29.0" layoutY="90.0" onMouseClicked="#moduloseleccionado" prefHeight="219.0" prefWidth="782.0" visible="false">
                            <columns>
                               <TableColumn fx:id="colidmoduloTab2" prefWidth="68.0" text="ID" />
                               <TableColumn fx:id="colnombremoduloTab2" prefWidth="264.0" text="Nombre" />
@@ -325,7 +287,7 @@
                   </Pane>
                </content>
             </Tab>
-            <Tab text="Eliminar">
+            <Tab onSelectionChanged="#tab2changed" text="Eliminar">
                <content>
                   <Pane prefHeight="489.0" prefWidth="710.0">
                      <children>
@@ -363,7 +325,7 @@
                               <Font size="18.0" />
                            </font>
                         </Button>
-                        <TableView fx:id="tablealumnosTab3" layoutX="29.0" layoutY="90.0" onMouseClicked="#selectalumnoTab2" prefHeight="219.0" prefWidth="782.0" visible="false">
+                        <TableView fx:id="tablealumnosTab3" layoutX="29.0" layoutY="90.0" prefHeight="219.0" prefWidth="782.0" visible="false">
                            <columns>
                               <TableColumn fx:id="colidalumnoTab3" prefWidth="43.0" text="ID" />
                               <TableColumn fx:id="colnombrealumnoTab3" prefWidth="195.0" text="Nombre" />
@@ -373,7 +335,7 @@
                               <TableColumn fx:id="coldnialumnoTab3" minWidth="8.0" prefWidth="132.0" text="DNI" />
                            </columns>
                         </TableView>
-                        <TableView fx:id="tableciclosTab3" layoutX="29.0" layoutY="90.0" onMouseClicked="#selectcicloTab2" prefHeight="219.0" prefWidth="782.0" visible="false">
+                        <TableView fx:id="tableciclosTab3" layoutX="29.0" layoutY="90.0" prefHeight="219.0" prefWidth="782.0" visible="false">
                            <columns>
                               <TableColumn fx:id="colidcicloTab3" prefWidth="84.0" text="ID" />
                               <TableColumn fx:id="colnombrecicloTab3" prefWidth="367.0" text="Nombre" />
@@ -381,7 +343,7 @@
                               <TableColumn fx:id="colfechacicloTab3" prefWidth="223.0" text="Fecha de alta" />
                            </columns>
                         </TableView>
-                        <TableView fx:id="tablecursosTab3" layoutX="29.0" layoutY="90.0" onMouseClicked="#selectcursoTab2" prefHeight="219.0" prefWidth="782.0" visible="false">
+                        <TableView fx:id="tablecursosTab3" layoutX="29.0" layoutY="90.0" prefHeight="219.0" prefWidth="782.0" visible="false">
                            <columns>
                               <TableColumn fx:id="colidcursoTab3" prefWidth="75.0" text="ID" />
                               <TableColumn fx:id="colnombrecursoTab3" minWidth="0.0" prefWidth="325.0" text="Nombre" />
@@ -389,7 +351,7 @@
                               <TableColumn fx:id="colidciclocursoTab3" minWidth="0.0" prefWidth="98.0" text="ID del Ciclo" />
                            </columns>
                         </TableView>
-                        <TableView fx:id="tablematriculasTab3" layoutX="29.0" layoutY="90.0" onMouseClicked="#selectmatriculaTab2" prefHeight="219.0" prefWidth="782.0" visible="false">
+                        <TableView fx:id="tablematriculasTab3" layoutX="29.0" layoutY="90.0" prefHeight="219.0" prefWidth="782.0" visible="false">
                            <columns>
                               <TableColumn fx:id="colidalumnomatriculaTab3" prefWidth="150.0" text="ID del Alumno" />
                               <TableColumn fx:id="colidmodulomatriculaTab3" minWidth="0.0" prefWidth="151.0" text="ID del Módulo" />
@@ -397,7 +359,7 @@
                               <TableColumn fx:id="colfechabajamatriculaTab3" minWidth="0.0" prefWidth="226.0" text="Fecha de baja" />
                            </columns>
                         </TableView>
-                        <TableView fx:id="tablemodulosTab3" layoutX="29.0" layoutY="90.0" onMouseClicked="#selectmoduloTab2" prefHeight="219.0" prefWidth="782.0" visible="false">
+                        <TableView fx:id="tablemodulosTab3" layoutX="29.0" layoutY="90.0" prefHeight="219.0" prefWidth="782.0" visible="false">
                            <columns>
                               <TableColumn fx:id="colidmoduloTab3" prefWidth="68.0" text="ID" />
                               <TableColumn fx:id="colnombremoduloTab3" prefWidth="264.0" text="Nombre" />
