@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 13-feb-2018 17:28:12 by Hibernate Tools 5.2.8.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="adpspdidb" dynamic-insert="false" dynamic-update="false" mutable="true" name="domain.Modulos" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="modulos">
+        <id name="idModulo" type="java.lang.Integer">
+            <column name="idModulo"/>
+            <generator class="identity"/>
+        </id>
+        <many-to-one class="domain.Cursos" embed-xml="true" fetch="select" insert="true" name="cursos" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="idCurso"/>
+        </many-to-one>
+        <property generated="never" lazy="false" name="nombre" optimistic-lock="true" type="string" unique="false">
+            <column length="45" name="nombre"/>
+        </property>
+        <property generated="never" lazy="false" name="siglas" optimistic-lock="true" type="string" unique="false">
+            <column length="45" name="siglas"/>
+        </property>
+        <property generated="always" lazy="false" name="fechaAlta" optimistic-lock="true" type="timestamp" unique="false">
+            <column length="26" name="fecha_alta" not-null="true"/>
+        </property>
+
+    </class>
+</hibernate-mapping>

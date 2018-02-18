@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 15-feb-2018 15:31:18 by Hibernate Tools 5.2.8.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="adpspdidb" dynamic-insert="false" dynamic-update="false" mutable="true" name="domain.Usuarios" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="usuarios">
+        <id name="idUsuario" type="java.lang.Integer">
+            <column name="idUsuario"/>
+            <generator class="identity"/>
+        </id>
+        <property generated="never" lazy="false" name="username" optimistic-lock="true" type="string" unique="false">
+            <column length="45" name="Username"/>
+        </property>
+        <property generated="never" lazy="false" name="password" optimistic-lock="true" type="string" unique="false">
+            <column length="45" name="Password"/>
+        </property>
+    </class>
+</hibernate-mapping>

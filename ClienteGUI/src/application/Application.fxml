@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="562.0" prefWidth="839.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ApplicationController">
+   <children>
+      <MenuBar nodeOrientation="RIGHT_TO_LEFT">
+         <menus>
+            <Menu mnemonicParsing="false" text="Cerrar sesión" />
+         </menus>
+      </MenuBar>
+      <TabPane prefHeight="518.0" prefWidth="982.0" tabClosingPolicy="UNAVAILABLE">
+         <tabs>
+            <Tab text="Añadir">
+               <content>
+                  <Pane prefHeight="489.0" prefWidth="710.0">
+                     <children>
+                        <RadioButton fx:id="rbalumnoTab1" layoutX="168.0" layoutY="46.0" mnemonicParsing="false" onAction="#rbalumnolistenerTab1" text="Alumno">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="elegir" />
+                           </toggleGroup>
+                        </RadioButton>
+                        <RadioButton fx:id="rbciclotab1" layoutX="268.0" layoutY="46.0" mnemonicParsing="false" onAction="#rbciclolistenerTab1" text="Ciclo" toggleGroup="$elegir" />
+                        <RadioButton fx:id="rbcursotab1" layoutX="368.0" layoutY="46.0" mnemonicParsing="false" onAction="#rbcursolistenerTab1" text="Curso" toggleGroup="$elegir" />
+                        <RadioButton fx:id="rbmatriculatab1" layoutX="468.0" layoutY="46.0" mnemonicParsing="false" onAction="#rbmatriculalistenerTab1" text="Matrícula" toggleGroup="$elegir" />
+                        <RadioButton fx:id="rbmodulotab1" layoutX="568.0" layoutY="46.0" mnemonicParsing="false" onAction="#rbmodulolistenerTab1" text="Módulo" toggleGroup="$elegir" />
+                        <Button fx:id="añadiralumno" layoutX="335.0" layoutY="400.0" mnemonicParsing="false" onAction="#añadiralumnolistener" text="AÑADIR ALUMNO" visible="false">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                        <Text fx:id="nombrealumnotextTab1" layoutX="14.0" layoutY="130.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre" textAlignment="RIGHT" visible="false" wrappingWidth="108.65283203125">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="nombrealumnoTab1" layoutX="132.0" layoutY="110.0" visible="false" />
+                        <Text fx:id="apellidosalumnotextTab1" layoutX="281.0" layoutY="130.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Apellidos" textAlignment="RIGHT" visible="false" wrappingWidth="108.65283203125">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="apellidosalumnoTab1" layoutX="399.0" layoutY="110.0" visible="false" />
+                        <Text fx:id="telefonoalumnotextTab1" layoutX="548.0" layoutY="130.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Teléfono" textAlignment="RIGHT" visible="false" wrappingWidth="108.65283203125">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="telefonoalumnoTab1" layoutX="666.0" layoutY="110.0" visible="false" />
+                        <Text fx:id="correoalumnotextTab1" layoutX="14.0" layoutY="219.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Correo" textAlignment="RIGHT" visible="false" wrappingWidth="108.65283203125">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="correoalumnoTab1" layoutX="133.0" layoutY="199.0" visible="false" />
+                        <Text fx:id="dnialumnotextTab1" layoutX="281.0" layoutY="219.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DNI" textAlignment="RIGHT" visible="false" wrappingWidth="108.65283203125">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="dnialumnoTab1" layoutX="400.0" layoutY="198.0" prefHeight="25.0" prefWidth="148.0" visible="false" />
+                        <Button fx:id="añadirciclo" layoutX="348.0" layoutY="400.0" mnemonicParsing="false" onAction="#añadirciclolistener" text="AÑADIR CICLO" visible="false">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                        <Text fx:id="nombreciclotextTab1" layoutX="153.0" layoutY="169.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre" textAlignment="RIGHT" visible="false" wrappingWidth="108.65283203125">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="nombrecicloTab1" layoutX="271.0" layoutY="149.0" visible="false" />
+                        <Text fx:id="siglasciclotextTab1" layoutX="420.0" layoutY="169.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Siglas" textAlignment="RIGHT" visible="false" wrappingWidth="108.65283203125">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="siglascicloTab1" layoutX="548.0" layoutY="149.0" visible="false" />
+                        <Button fx:id="añadircurso" layoutX="344.0" layoutY="400.0" mnemonicParsing="false" onAction="#añadircursolistener" text="AÑADIR CURSO" visible="false">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                        <Text fx:id="nombrecursotextTab1" layoutX="153.0" layoutY="169.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre" textAlignment="RIGHT" visible="false" wrappingWidth="108.65283203125">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="nombrecursoTab1" layoutX="271.0" layoutY="149.0" visible="false" />
+                        <Text fx:id="idciclocursotextTab1" layoutX="420.0" layoutY="169.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ciclo (id)" textAlignment="RIGHT" visible="false" wrappingWidth="108.65283203125">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="idciclocursoTab1" layoutX="548.0" layoutY="149.0" visible="false" />
+                        <Button fx:id="añadirmatricula" layoutX="325.0" layoutY="400.0" mnemonicParsing="false" onAction="#añadirmatriculalistener" text="AÑADIR MATRÍCULA" visible="false">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                        <Text fx:id="idalumnomatriculatextTab1" layoutX="153.0" layoutY="169.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Alumno (id)" textAlignment="RIGHT" visible="false" wrappingWidth="108.65283203125">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="idalumnomatriculaTab1" layoutX="271.0" layoutY="149.0" visible="false" />
+                        <Text fx:id="idmodulomatriculatextTab1" layoutX="420.0" layoutY="169.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Módulo (id)" textAlignment="RIGHT" visible="false" wrappingWidth="108.65283203125">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="idmodulomatriculaTab1" layoutX="548.0" layoutY="149.0" visible="false" />
+                        <Button fx:id="añadirmodulo" layoutX="334.0" layoutY="400.0" mnemonicParsing="false" onAction="#añadirmodulolistener" text="AÑADIR MÓDULO" visible="false">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                        <Text fx:id="nombremodulotextTab1" layoutX="153.0" layoutY="169.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre" textAlignment="RIGHT" visible="false" wrappingWidth="108.65283203125">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="nombremoduloTab1" layoutX="271.0" layoutY="149.0" visible="false" />
+                        <Text fx:id="siglasmodulotextTab1" layoutX="420.0" layoutY="169.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Siglas" textAlignment="RIGHT" visible="false" wrappingWidth="108.65283203125">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="siglasmoduloTab1" layoutX="548.0" layoutY="149.0" visible="false" />
+                        <Text fx:id="idcursomodulotextTab1" layoutX="291.0" layoutY="230.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Curso (id)" textAlignment="RIGHT" visible="false" wrappingWidth="108.65283203125">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="idcursomoduloTab1" layoutX="405.0" layoutY="210.0" prefHeight="25.0" prefWidth="148.0" visible="false" />
+                     </children>
+                  </Pane>
+               </content>
+            </Tab>
+            <Tab text="Editar">
+               <content>
+                  <Pane prefHeight="489.0" prefWidth="710.0">
+                     <children>
+                        <RadioButton fx:id="rbalumnoTab2" layoutX="168.0" layoutY="46.0" mnemonicParsing="false" onAction="#rbalumnolistenerTab2" text="Alumno">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="elegir1" />
+                           </toggleGroup>
+                        </RadioButton>
+                        <RadioButton fx:id="rbcicloTab2" layoutX="268.0" layoutY="46.0" mnemonicParsing="false" onAction="#rbciclolistenerTab2" text="Ciclo" toggleGroup="$elegir1" />
+                        <RadioButton fx:id="rbcursoTab2" layoutX="368.0" layoutY="46.0" mnemonicParsing="false" onAction="#rbcursolistenerTab2" text="Curso" toggleGroup="$elegir1" />
+                        <RadioButton fx:id="rbmatriculaTab2" layoutX="468.0" layoutY="46.0" mnemonicParsing="false" onAction="#rbmatriculalistenerTab2" text="Matrícula" toggleGroup="$elegir1" />
+                        <RadioButton fx:id="rbmoduloTab2" layoutX="568.0" layoutY="46.0" mnemonicParsing="false" onAction="#rbmodulolistenerTab2" text="Módulo" toggleGroup="$elegir1" />
+                        <Button fx:id="editaralumno" layoutX="609.0" layoutY="420.0" mnemonicParsing="false" onAction="#editaralumnolistener" text="EDITAR ALUMNO" visible="false">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                        <Text fx:id="nombrealumnotextTab2" layoutX="20.0" layoutY="358.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre" textAlignment="RIGHT" visible="false" wrappingWidth="108.65283203125">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="nombrealumnoTab2" layoutX="138.0" layoutY="338.0" visible="false" />
+                        <Text fx:id="apellidosalumnotextTab2" layoutX="287.0" layoutY="358.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Apellidos" textAlignment="RIGHT" visible="false" wrappingWidth="108.65283203125">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="apellidosalumnoTab2" layoutX="405.0" layoutY="338.0" visible="false" />
+                        <Text fx:id="telefonoalumnotextTab2" layoutX="554.0" layoutY="358.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Teléfono" textAlignment="RIGHT" visible="false" wrappingWidth="108.65283203125">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="telefonoalumnoTab2" layoutX="672.0" layoutY="338.0" visible="false" />
+                        <Text fx:id="correoalumnotextTab2" layoutX="20.0" layoutY="447.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Correo" textAlignment="RIGHT" visible="false" wrappingWidth="108.65283203125">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="correoalumnoTab2" layoutX="139.0" layoutY="427.0" visible="false" />
+                        <Text fx:id="dnialumnotextTab2" layoutX="287.0" layoutY="447.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DNI" textAlignment="RIGHT" visible="false" wrappingWidth="108.65283203125">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="dnialumnoTab2" layoutX="406.0" layoutY="426.0" prefHeight="25.0" prefWidth="148.0" visible="false" />
+                        <Button fx:id="editarciclo" layoutX="622.0" layoutY="420.0" mnemonicParsing="false" onAction="#editarciclolistener" text="EDITAR CICLO" visible="false">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                        <Text fx:id="nombreciclotextTab2" layoutX="159.0" layoutY="397.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre" textAlignment="RIGHT" visible="false" wrappingWidth="108.65283203125">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="nombrecicloTab2" layoutX="277.0" layoutY="377.0" visible="false" />
+                        <Text fx:id="siglasciclotextTab2" layoutX="426.0" layoutY="397.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Siglas" textAlignment="RIGHT" visible="false" wrappingWidth="108.65283203125">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="siglascicloTab2" layoutX="554.0" layoutY="377.0" visible="false" />
+                        <Button fx:id="editarcurso" layoutX="618.0" layoutY="420.0" mnemonicParsing="false" onAction="#editarcursolistener" text="EDITAR CURSO" visible="false">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                        <Text fx:id="nombrecursotextTab2" layoutX="159.0" layoutY="397.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre" textAlignment="RIGHT" visible="false" wrappingWidth="108.65283203125">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="nombrecursoTab2" layoutX="277.0" layoutY="377.0" visible="false" />
+                        <Text fx:id="idciclocursotextTab2" layoutX="426.0" layoutY="397.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ciclo (id)" textAlignment="RIGHT" visible="false" wrappingWidth="108.65283203125">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="idciclocursoTab2" layoutX="554.0" layoutY="377.0" visible="false" />
+                        <Button fx:id="editarmatricula" layoutX="599.0" layoutY="420.0" mnemonicParsing="false" onAction="#editarmatriculalistener" text="EDITAR MATRÍCULA" visible="false">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                        <Text fx:id="idalumnomatriculatextTab2" layoutX="159.0" layoutY="397.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Alumno (id)" textAlignment="RIGHT" visible="false" wrappingWidth="108.65283203125">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="idalumnomatriculaTab2" layoutX="277.0" layoutY="377.0" visible="false" />
+                        <Text fx:id="idmodulomatriculatextTab2" layoutX="426.0" layoutY="397.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Módulo (id)" textAlignment="RIGHT" visible="false" wrappingWidth="108.65283203125">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="idmodulomatriculaTab2" layoutX="554.0" layoutY="377.0" visible="false" />
+                        <Button fx:id="editarmodulo" layoutX="608.0" layoutY="420.0" mnemonicParsing="false" onAction="#editarmodulolistener" text="EDITAR MÓDULO" visible="false">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                        <Text fx:id="nombremodulotextTab2" layoutX="159.0" layoutY="397.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre" textAlignment="RIGHT" visible="false" wrappingWidth="108.65283203125">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="nombremoduloTab2" layoutX="277.0" layoutY="377.0" visible="false" />
+                        <Text fx:id="siglasmodulotextTab2" layoutX="426.0" layoutY="397.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Siglas" textAlignment="RIGHT" visible="false" wrappingWidth="108.65283203125">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="siglasmoduloTab2" layoutX="554.0" layoutY="377.0" visible="false" />
+                        <Text fx:id="idcursomodulotextTab2" layoutX="297.0" layoutY="458.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Curso (id)" textAlignment="RIGHT" visible="false" wrappingWidth="108.65283203125">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="idcursomoduloTab2" layoutX="411.0" layoutY="438.0" prefHeight="25.0" prefWidth="148.0" visible="false" />
+                        <TableView fx:id="tablealumnosTab2" layoutX="29.0" layoutY="90.0" prefHeight="219.0" prefWidth="782.0" visible="false">
+                          <columns>
+                            <TableColumn fx:id="colidalumnoTab2" prefWidth="43.0" text="ID" />
+                            <TableColumn fx:id="colnombrealumnoTab2" prefWidth="195.0" text="Nombre" />
+                              <TableColumn fx:id="colapellidosalumnoTab2" prefWidth="187.0" text="Apellidos" />
+                              <TableColumn fx:id="coltelefonoalumnoTab2" prefWidth="121.0" text="Teléfono" />
+                              <TableColumn fx:id="colcorreoalumnoTab2" prefWidth="102.0" text="Correo" />
+                              <TableColumn fx:id="coldnialumnoTab2" minWidth="8.0" prefWidth="132.0" text="DNI" />
+                          </columns>
+                        </TableView>
+                        <TableView fx:id="tableciclosTab2" layoutX="29.0" layoutY="90.0" prefHeight="219.0" prefWidth="782.0" visible="false">
+                           <columns>
+                              <TableColumn fx:id="colidcicloTab2" prefWidth="84.0" text="ID" />
+                              <TableColumn fx:id="colnombrecicloTab2" prefWidth="367.0" text="Nombre" />
+                              <TableColumn fx:id="colsiglascicloTab2" prefWidth="106.0" text="Siglas" />
+                              <TableColumn fx:id="colfechacicloTab2" prefWidth="223.0" text="Fecha de alta" />
+                           </columns>
+                        </TableView>
+                        <TableView fx:id="tablecursosTab2" layoutX="29.0" layoutY="90.0" prefHeight="219.0" prefWidth="782.0" visible="false">
+                           <columns>
+                              <TableColumn fx:id="colidcursoTab2" prefWidth="75.0" text="ID" />
+                              <TableColumn fx:id="colnombrecursoTab2" minWidth="0.0" prefWidth="325.0" text="Nombre" />
+                              <TableColumn fx:id="colfechacursoTab2" prefWidth="215.0" text="Fecha de alta" />
+                              <TableColumn fx:id="colidciclocursoTab2" minWidth="0.0" prefWidth="165.0" text="ID del Ciclo" />
+                           </columns>
+                        </TableView>
+                        <TableView fx:id="tablematriculasTab2" layoutX="29.0" layoutY="90.0" prefHeight="219.0" prefWidth="782.0" visible="false">
+                           <columns>
+                              <TableColumn fx:id="colidalumnomatriculaTab2" prefWidth="150.0" text="ID del Alumno" />
+                              <TableColumn fx:id="colidmodulomatriculaTab2" minWidth="0.0" prefWidth="151.0" text="ID del Módulo" />
+                              <TableColumn fx:id="colfechaaltamatriculaTab2" minWidth="0.0" prefWidth="253.0" text="Fecha de alta" />
+                              <TableColumn fx:id="colfechabajamatriculaTab2" minWidth="0.0" prefWidth="226.0" text="Fecha de baja" />
+                           </columns>
+                        </TableView>
+                        <TableView fx:id="tablemodulosTab2" layoutX="29.0" layoutY="90.0" prefHeight="219.0" prefWidth="782.0" visible="false">
+                           <columns>
+                              <TableColumn fx:id="colidmoduloTab2" prefWidth="68.0" text="ID" />
+                              <TableColumn fx:id="colnombremoduloTab2" prefWidth="264.0" text="Nombre" />
+                              <TableColumn fx:id="colsiglasmoduloTab2" prefWidth="121.0" text="Siglas" />
+                              <TableColumn fx:id="colfechamoduloTab2" minWidth="0.0" prefWidth="224.0" text="Fecha de alta" />
+                              <TableColumn fx:id="colidcursomoduloTab2" prefWidth="103.0" text="ID del Curso" />
+                           </columns>
+                        </TableView>
+                     </children>
+                  </Pane>
+               </content>
+            </Tab>
+            <Tab text="Eliminar">
+               <content>
+                  <Pane prefHeight="489.0" prefWidth="710.0">
+                     <children>
+                        <RadioButton fx:id="rbalumnoTab3" layoutX="168.0" layoutY="46.0" mnemonicParsing="false" onAction="#rbalumnolistenerTab3" text="Alumno">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="elegir11" />
+                           </toggleGroup>
+                        </RadioButton>
+                        <RadioButton fx:id="rbcicloTab3" layoutX="268.0" layoutY="46.0" mnemonicParsing="false" onAction="#rbciclolistenerTab3" text="Ciclo" toggleGroup="$elegir11" />
+                        <RadioButton fx:id="rbcursoTab3" layoutX="368.0" layoutY="46.0" mnemonicParsing="false" onAction="#rbcursolistenerTab3" text="Curso" toggleGroup="$elegir11" />
+                        <RadioButton fx:id="rbmatriculaTab3" layoutX="468.0" layoutY="46.0" mnemonicParsing="false" onAction="#rbmatriculalistenerTab3" text="Matrícula" toggleGroup="$elegir11" />
+                        <RadioButton fx:id="rbmoduloTab3" layoutX="568.0" layoutY="46.0" mnemonicParsing="false" onAction="#rbmodulolistenerTab3" text="Módulo" toggleGroup="$elegir11" />
+                        <Button fx:id="eliminaralumno" layoutX="327.0" layoutY="413.0" mnemonicParsing="false" onAction="#eliminaralumnolistener" text="ELIMINAR ALUMNO" visible="false">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="eliminarciclo" layoutX="340.0" layoutY="413.0" mnemonicParsing="false" onAction="#eliminarciclolistener" text="ELIMINAR CICLO" visible="false">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="eliminarcurso" layoutX="336.0" layoutY="413.0" mnemonicParsing="false" onAction="#eliminarcursolistener" text="ELIMINAR CURSO" visible="false">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="eliminarmatricula" layoutX="317.0" layoutY="413.0" mnemonicParsing="false" onAction="#eliminarmatriculalistener" text="ELIMINAR MATRÍCULA" visible="false">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="eliminarmodulo" layoutX="326.0" layoutY="413.0" mnemonicParsing="false" onAction="#eliminarmodulolistener" text="ELIMINAR MÓDULO" visible="false">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                        <TableView fx:id="tablealumnosTab3" layoutX="29.0" layoutY="90.0" onMouseClicked="#selectalumnoTab2" prefHeight="219.0" prefWidth="782.0" visible="false">
+                           <columns>
+                              <TableColumn fx:id="colidalumnoTab3" prefWidth="43.0" text="ID" />
+                              <TableColumn fx:id="colnombrealumnoTab3" prefWidth="195.0" text="Nombre" />
+                              <TableColumn fx:id="colapellidosalumnoTab3" prefWidth="187.0" text="Apellidos" />
+                              <TableColumn fx:id="coltelefonoalumnoTab3" prefWidth="121.0" text="Teléfono" />
+                              <TableColumn fx:id="colcorreoalumnoTab3" prefWidth="102.0" text="Correo" />
+                              <TableColumn fx:id="coldnialumnoTab3" minWidth="8.0" prefWidth="132.0" text="DNI" />
+                           </columns>
+                        </TableView>
+                        <TableView fx:id="tableciclosTab3" layoutX="29.0" layoutY="90.0" onMouseClicked="#selectcicloTab2" prefHeight="219.0" prefWidth="782.0" visible="false">
+                           <columns>
+                              <TableColumn fx:id="colidcicloTab3" prefWidth="84.0" text="ID" />
+                              <TableColumn fx:id="colnombrecicloTab3" prefWidth="367.0" text="Nombre" />
+                              <TableColumn fx:id="colsiglascicloTab3" prefWidth="106.0" text="Siglas" />
+                              <TableColumn fx:id="colfechacicloTab3" prefWidth="223.0" text="Fecha de alta" />
+                           </columns>
+                        </TableView>
+                        <TableView fx:id="tablecursosTab3" layoutX="29.0" layoutY="90.0" onMouseClicked="#selectcursoTab2" prefHeight="219.0" prefWidth="782.0" visible="false">
+                           <columns>
+                              <TableColumn fx:id="colidcursoTab3" prefWidth="75.0" text="ID" />
+                              <TableColumn fx:id="colnombrecursoTab3" minWidth="0.0" prefWidth="325.0" text="Nombre" />
+                              <TableColumn fx:id="colfechacursoTab3" prefWidth="282.0" text="Fecha de alta" />
+                              <TableColumn fx:id="colidciclocursoTab3" minWidth="0.0" prefWidth="98.0" text="ID del Ciclo" />
+                           </columns>
+                        </TableView>
+                        <TableView fx:id="tablematriculasTab3" layoutX="29.0" layoutY="90.0" onMouseClicked="#selectmatriculaTab2" prefHeight="219.0" prefWidth="782.0" visible="false">
+                           <columns>
+                              <TableColumn fx:id="colidalumnomatriculaTab3" prefWidth="150.0" text="ID del Alumno" />
+                              <TableColumn fx:id="colidmodulomatriculaTab3" minWidth="0.0" prefWidth="151.0" text="ID del Módulo" />
+                              <TableColumn fx:id="colfechaaltamatriculaTab3" minWidth="0.0" prefWidth="253.0" text="Fecha de alta" />
+                              <TableColumn fx:id="colfechabajamatriculaTab3" minWidth="0.0" prefWidth="226.0" text="Fecha de baja" />
+                           </columns>
+                        </TableView>
+                        <TableView fx:id="tablemodulosTab3" layoutX="29.0" layoutY="90.0" onMouseClicked="#selectmoduloTab2" prefHeight="219.0" prefWidth="782.0" visible="false">
+                           <columns>
+                              <TableColumn fx:id="colidmoduloTab3" prefWidth="68.0" text="ID" />
+                              <TableColumn fx:id="colnombremoduloTab3" prefWidth="264.0" text="Nombre" />
+                              <TableColumn fx:id="colsiglasmoduloTab3" prefWidth="86.0" text="Siglas" />
+                              <TableColumn fx:id="colfechamoduloTab3" minWidth="0.0" prefWidth="280.0" text="Fecha de alta" />
+                              <TableColumn fx:id="colidcursomoduloTab3" prefWidth="82.0" text="ID del Curso" />
+                           </columns>
+                        </TableView>
+                     </children>
+                  </Pane>
+               </content>
+            </Tab>
+         </tabs>
+      </TabPane>
+      <HBox id="HBox" alignment="CENTER_LEFT" prefHeight="21.0" prefWidth="839.0" spacing="5.0">
+         <children>
+            <ImageView fx:id="icon" fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../tick.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="info" maxHeight="1.7976931348623157E308" maxWidth="-1.0" text="Conectado" HBox.hgrow="ALWAYS">
+               <font>
+                  <Font size="11.0" fx:id="x3" />
+               </font>
+               <textFill>
+                  <Color blue="0.625" green="0.625" red="0.625" fx:id="x4" />
+               </textFill>
+            </Label>
+         </children>
+         <padding>
+            <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+         </padding>
+      </HBox>
+   </children>
+</VBox>
