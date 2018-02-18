@@ -8,10 +8,10 @@ public class Modulos implements java.io.Serializable {
 
 	private Integer idModulo;
 	private Cursos cursos;
-	private Integer idCurso;
-	private String nombre;
 	private String siglas;
-	private Date fechaAlta;
+	private String nombre;
+	private Date FechaAlta;
+	private Integer idCurso;
 
 	public Modulos() {
 	}
@@ -32,7 +32,7 @@ public class Modulos implements java.io.Serializable {
 		this.cursos = cursos;
 		this.nombre = nombre;
 		this.siglas = siglas;
-		this.fechaAlta = fechaAlta;
+		this.FechaAlta = fechaAlta;
 	}
 	
 	public Modulos(Integer idModulo, String nombre, String siglas, Date fechaAlta, Integer idCurso) {
@@ -74,12 +74,12 @@ public class Modulos implements java.io.Serializable {
 		this.siglas = siglas;
 	}
 
-	public Date getfechaAlta() {
-		return this.fechaAlta;
+	public Date getFechaAlta() {
+		return this.FechaAlta;
 	}
 
 	public void setFechaAlta(Date fechaAlta) {
-		this.fechaAlta = fechaAlta;
+		this.FechaAlta = fechaAlta;
 	}
 
 

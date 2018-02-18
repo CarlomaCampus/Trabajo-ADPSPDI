@@ -1046,7 +1046,7 @@ public class ApplicationController {
 		filasModulos.clear();
 		for (int i = 0; i < listamodulos.size(); i++) {
 			filasModulos.add(new Modulos(listamodulos.get(i).getIdModulo(), listamodulos.get(i).getNombre(),
-					listamodulos.get(i).getSiglas(), listamodulos.get(i).getfechaAlta(),
+					listamodulos.get(i).getSiglas(), listamodulos.get(i).getFechaAlta(),
 					listamodulos.get(i).getCursos().getIdCurso()));
 		}
 
@@ -1248,7 +1248,7 @@ public class ApplicationController {
 		filasModulos.clear();
 		for (int i = 0; i < listamodulos.size(); i++) {
 			filasModulos.add(new Modulos(listamodulos.get(i).getIdModulo(), listamodulos.get(i).getNombre(),
-					listamodulos.get(i).getSiglas(), listamodulos.get(i).getfechaAlta(),
+					listamodulos.get(i).getSiglas(), listamodulos.get(i).getFechaAlta(),
 					listamodulos.get(i).getCursos().getIdCurso()));
 		}
 
