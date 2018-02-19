@@ -59,7 +59,6 @@ public class LoginController extends Application {
 				switch (result) {
 
 				case "200":
-					System.out.println("sw200");
 					saveCheckboxState();
 					((Stage) username.getScene().getWindow()).close();
 					Main.startApplication();

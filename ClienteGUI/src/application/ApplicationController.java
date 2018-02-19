@@ -757,10 +757,9 @@ public class ApplicationController {
 			info.setTextFill(Color.web("#8c2a00"));
 			icon.setImage(imagecross);
 			break;
-
 		default:
 
-			infotext = ("El servidor ha devuelto el código #" + responsecode);
+			infotext = ("Alerta, código #" + responsecode);
 			// si no sabemos cuál es el código guardamos toda la información posible en una
 			// cadena
 			try {
@@ -779,6 +778,7 @@ public class ApplicationController {
 			}
 
 			;
+			if(infotext.contains("DataException")) {infotext = "Has introducido un texto demasiado largo.";}
 			info.setText(infotext);
 			info.setVisible(true);
 			icon.setImage(imagecross);

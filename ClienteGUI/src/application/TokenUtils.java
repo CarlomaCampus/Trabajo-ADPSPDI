@@ -2,6 +2,7 @@ package application;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -51,7 +52,7 @@ public class TokenUtils {
     public static boolean elTokenHaExpirado(String token) {
 
     	
-        String[] parts = token.split(".");
+        String[] parts = token.split("\\.");
         Base64.Decoder decoder = Base64.getUrlDecoder();
         String decoderPayload = new String(decoder.decode(parts[1]));
         String save = decoderPayload.substring(1, decoderPayload.length()-1);
@@ -93,13 +94,19 @@ public class TokenUtils {
     }
 
     
-    public static String obtenerTokenGuardado() throws IOException {
-        File file = new File(TOKEN_TXT_PATH);
-        BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
-        String line;
-        line = bufferedReader.readLine();
+    public static String obtenerTokenGuardado() {
+    	String linea;
+    	File file = new File(TOKEN_TXT_PATH);
+        BufferedReader bufferedReader;
+		try {
+			bufferedReader = new BufferedReader(new FileReader(file));
+		
+        
+        linea = bufferedReader.readLine();
         bufferedReader.close();
-        return line;
+        return linea;
+		} catch (IOException e) { e.printStackTrace(); }
+       return "";
     }
     
 }

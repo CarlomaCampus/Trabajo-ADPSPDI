@@ -22,7 +22,7 @@ public class Main extends Application{
 	
 	public static void startLogin() {
 		if(isCheckboxPressed() && TokenUtils.elTokenExiste()
-    			//&& !TokenUtils.elTokenHaExpirado(token)
+    			&& !TokenUtils.elTokenHaExpirado(TokenUtils.obtenerTokenGuardado())
     			) {
 
     		startApplication();
