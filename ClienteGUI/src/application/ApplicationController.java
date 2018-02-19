@@ -835,8 +835,8 @@ public class ApplicationController {
 		filasAlumnos.clear();
 		for (int i = 0; i < listaalumnos.size(); i++) {
 			filasAlumnos.add(new Alumnos(listaalumnos.get(i).getIdAlumno(), listaalumnos.get(i).getNombre(),
-					listaalumnos.get(i).getApellidos(), listaalumnos.get(i).getTelefono(), listaalumnos.get(i).getDni(),
-					listaalumnos.get(i).getCorreo()));
+					listaalumnos.get(i).getApellidos(), listaalumnos.get(i).getTelefono(),
+					listaalumnos.get(i).getCorreo(), listaalumnos.get(i).getDni()));
 		}
 
 		tablealumnosTab2.setItems(filasAlumnos);
@@ -1021,8 +1021,8 @@ public class ApplicationController {
 		filasAlumnos.clear();
 		for (int i = 0; i < listaalumnos.size(); i++) {
 			filasAlumnos.add(new Alumnos(listaalumnos.get(i).getIdAlumno(), listaalumnos.get(i).getNombre(),
-					listaalumnos.get(i).getApellidos(), listaalumnos.get(i).getTelefono(), listaalumnos.get(i).getDni(),
-					listaalumnos.get(i).getCorreo()));
+					listaalumnos.get(i).getApellidos(), listaalumnos.get(i).getTelefono(),
+					listaalumnos.get(i).getCorreo(), listaalumnos.get(i).getDni()));
 		}
 
 		tablealumnosTab3.setItems(filasAlumnos);
