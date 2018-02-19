@@ -2,8 +2,11 @@ package application;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
+import java.io.PrintWriter;
 import java.lang.reflect.Type;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -27,6 +30,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 import modelos.Alumnos;
 import modelos.Ciclos;
 import modelos.Cursos;
@@ -657,9 +661,14 @@ public class ApplicationController {
 
 			} else {
 				info.setText("Tu token ha expirado. Por favor, cierra sesión y vuelve a iniciar.");
+				info.setTextFill(Color.web("#8c2a00"));
+				icon.setImage(imagecross);
+				
 			}
 		} catch (Exception e) {
 			info.setText("El programa ha encontrado el siguiente error: " + e.toString());
+			info.setTextFill(Color.web("#8c2a00"));
+			icon.setImage(imagecross);
 		}
 
 		resetearCamposTab1();
@@ -773,6 +782,7 @@ public class ApplicationController {
 			info.setText(infotext);
 			info.setVisible(true);
 			icon.setImage(imagecross);
+			info.setTextFill(Color.web("#8c2a00"));
 			break;
 		}
 
@@ -1270,5 +1280,24 @@ public class ApplicationController {
 		
 
 	}
+	
+	@FXML
+	private void cerrarsesion() {
 
+		File file = new File("src/application/checkbox.txt");
+		FileWriter filewriter;
+		try { filewriter = new FileWriter(file); 
+		PrintWriter printwriter = new PrintWriter(filewriter);
+		printwriter.println(false);
+		printwriter.close();
+		} catch (IOException e) { e.printStackTrace();}
+		((Stage) tablealumnosTab2.getScene().getWindow()).close();
+		Main.startLogin();
+	
+		
+
+	}
+
+	
+	
 }

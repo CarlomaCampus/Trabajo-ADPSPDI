@@ -15,16 +15,21 @@ public class TokenUtils {
 
 	
 	
-	public static boolean elTokenExiste() throws IOException {
-
+	public static boolean elTokenExiste(){
+		try {
         File file = new File(TOKEN_TXT_PATH);
         @SuppressWarnings("resource")
 		BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
-        if (bufferedReader.readLine() == null) {
-            return false;
-        } else {
-            return true;
-        }
+        
+			if (bufferedReader.readLine() == null) {
+			    return false;
+			} else {
+			    return true;
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return false;
     }
 
 

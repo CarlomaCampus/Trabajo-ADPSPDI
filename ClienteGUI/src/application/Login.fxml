@@ -20,7 +20,7 @@
       </ImageView>
       <TextField fx:id="username" layoutX="172.0" layoutY="234.0" prefHeight="32.0" prefWidth="234.0" text="Admin" />
       <PasswordField fx:id="password" layoutX="172.0" layoutY="291.0" prefHeight="32.0" prefWidth="234.0" text="1234" />
-      <CheckBox fx:id="rememberme" disable="true" layoutX="172.0" layoutY="341.0" mnemonicParsing="false" text="Recuérdame" />
+      <CheckBox fx:id="rememberme" layoutX="172.0" layoutY="341.0" mnemonicParsing="false" text="Recuérdame" />
       <Button fx:id="enter" layoutX="167.0" layoutY="445.0" mnemonicParsing="false" onAction="#enter" prefHeight="17.0" prefWidth="124.0" text="ENTRAR">
          <font>
             <Font name="System Bold" size="15.0" />

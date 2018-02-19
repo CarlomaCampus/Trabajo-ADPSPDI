@@ -1,5 +1,8 @@
 package application;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
 
 import javafx.application.Application;
@@ -18,6 +21,13 @@ public class Main extends Application{
 	
 	
 	public static void startLogin() {
+		if(isCheckboxPressed() && TokenUtils.elTokenExiste()
+    			//&& !TokenUtils.elTokenHaExpirado(token)
+    			) {
+
+    		startApplication();
+    		
+    	} else {
         Stage primaryStage = new Stage();
         LoginController logincontroller = new LoginController();
         Parent root;
@@ -31,6 +41,7 @@ public class Main extends Application{
         primaryStage.show();
         
 		} catch (IOException e) { e.printStackTrace(); }
+    	}
     }
 	
 	public static void startApplication() {
@@ -56,6 +67,28 @@ public class Main extends Application{
 		startLogin();
 		
 	}
+	
+
+	private static boolean isCheckboxPressed(){
+
+		File file = new File("src/application/checkbox.txt");
+		BufferedReader bufferedreader;
+
+		try {
+			bufferedreader = new BufferedReader(new FileReader(file));
+
+			String line = bufferedreader.readLine();
+			bufferedreader.close();
+			if (line.equals("true")) {
+				return true;
+			} else {
+				return false;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return false;
+	};
 	
 	
 	

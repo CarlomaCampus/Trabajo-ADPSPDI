@@ -1,5 +1,12 @@
 package application;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+
 import javafx.application.Application;
 import javafx.concurrent.WorkerStateEvent;
 import javafx.event.EventHandler;
@@ -16,7 +23,6 @@ public class LoginController extends Application {
 
 	String result = "";
 
-	private String token;
 
 	@FXML
 	private TextField username;
@@ -39,7 +45,7 @@ public class LoginController extends Application {
 	@FXML
 	private void enter() {
 
-		final LoginService servicelogin = new LoginService(username, password, enter, info, token);
+		final LoginService servicelogin = new LoginService(username, password, enter, info);
 		info.setText("");
 
 		// mientras el servicelogin esté ejecutando, la propiedad visible del
@@ -53,6 +59,8 @@ public class LoginController extends Application {
 				switch (result) {
 
 				case "200":
+					System.out.println("sw200");
+					saveCheckboxState();
 					((Stage) username.getScene().getWindow()).close();
 					Main.startApplication();
 					break;
@@ -70,6 +78,17 @@ public class LoginController extends Application {
 				}
 				
 
+			}
+
+			private void saveCheckboxState (){
+				File file = new File("src/application/checkbox.txt");
+				FileWriter filewriter;
+				try { filewriter = new FileWriter(file); 
+				PrintWriter printwriter = new PrintWriter(filewriter);
+				if(rememberme.isSelected()) {printwriter.println(true);}
+				else {printwriter.println(false);}
+				printwriter.close();
+				} catch (IOException e) { e.printStackTrace();}
 			}
 		});
 
