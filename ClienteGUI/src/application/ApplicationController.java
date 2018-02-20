@@ -315,7 +315,7 @@ public class ApplicationController {
 	private void añadiralumnolistener() {
 
 		post(new Alumnos(nombrealumnoTab1.getText(), apellidosalumnoTab1.getText(), telefonoalumnoTab1.getText(),
-				correoalumnoTab1.getText(), dnialumnoTab1.getText()), "Alumnos");
+				dnialumnoTab1.getText(), correoalumnoTab1.getText()), "Alumnos");
 
 	}
 
@@ -376,7 +376,7 @@ public class ApplicationController {
 
 		try {
 			Alumnos alumno = tablealumnosTab2.getSelectionModel().getSelectedItem();
-			Alumnos nuevoalumno = new Alumnos(nombrealumnoTab2.getText(), apellidosalumnoTab2.getText(), telefonoalumnoTab2.getText(), correoalumnoTab2.getText(), dnialumnoTab2.getText());
+			Alumnos nuevoalumno = new Alumnos(nombrealumnoTab2.getText(), apellidosalumnoTab2.getText(), telefonoalumnoTab2.getText(), dnialumnoTab2.getText(), correoalumnoTab2.getText());
 			put(nuevoalumno, "Alumnos", alumno.getIdAlumno());
 			rbalumnolistenerTab2();
 		} catch (NullPointerException e) {
@@ -395,8 +395,8 @@ public class ApplicationController {
 		nombrealumnoTab2.setText(alumno.getNombre());
 		apellidosalumnoTab2.setText(alumno.getApellidos());
 		telefonoalumnoTab2.setText(alumno.getTelefono());
-		correoalumnoTab2.setText(alumno.getCorreo());
 		dnialumnoTab2.setText(alumno.getDni());
+		correoalumnoTab2.setText(alumno.getCorreo());
 	}
 	
 	@FXML
@@ -943,16 +943,16 @@ public class ApplicationController {
 		colnombrealumnoTab2.setCellValueFactory(new PropertyValueFactory<Alumnos, String>("nombre"));
 		colapellidosalumnoTab2.setCellValueFactory(new PropertyValueFactory<Alumnos, String>("apellidos"));
 		coltelefonoalumnoTab2.setCellValueFactory(new PropertyValueFactory<Alumnos, Integer>("telefono"));
-		colcorreoalumnoTab2.setCellValueFactory(new PropertyValueFactory<Alumnos, String>("dni"));
 		coldnialumnoTab2.setCellValueFactory(new PropertyValueFactory<Alumnos, String>("correo"));
+		colcorreoalumnoTab2.setCellValueFactory(new PropertyValueFactory<Alumnos, String>("dni"));
 
 		json = get("Alumnos");
 		List<Alumnos> listaalumnos = new Gson().fromJson(json, listTypeAlumnos);
 		filasAlumnos.clear();
 		for (int i = 0; i < listaalumnos.size(); i++) {
 			filasAlumnos.add(new Alumnos(listaalumnos.get(i).getIdAlumno(), listaalumnos.get(i).getNombre(),
-					listaalumnos.get(i).getApellidos(), listaalumnos.get(i).getTelefono(),
-					listaalumnos.get(i).getCorreo(), listaalumnos.get(i).getDni()));
+					listaalumnos.get(i).getApellidos(), listaalumnos.get(i).getTelefono(), listaalumnos.get(i).getDni(),
+					listaalumnos.get(i).getCorreo()));
 		}
 
 		tablealumnosTab2.setItems(filasAlumnos);
@@ -1124,8 +1124,8 @@ public class ApplicationController {
 		colnombrealumnoTab3.setCellValueFactory(new PropertyValueFactory<Alumnos, String>("nombre"));
 		colapellidosalumnoTab3.setCellValueFactory(new PropertyValueFactory<Alumnos, String>("apellidos"));
 		coltelefonoalumnoTab3.setCellValueFactory(new PropertyValueFactory<Alumnos, Integer>("telefono"));
-		colcorreoalumnoTab3.setCellValueFactory(new PropertyValueFactory<Alumnos, String>("dni"));
-		coldnialumnoTab3.setCellValueFactory(new PropertyValueFactory<Alumnos, String>("correo"));
+		coldnialumnoTab3.setCellValueFactory(new PropertyValueFactory<Alumnos, String>("dni"));
+		colcorreoalumnoTab3.setCellValueFactory(new PropertyValueFactory<Alumnos, String>("correo"));
 
 		refreshtablealumnosTab3();
 
@@ -1137,8 +1137,8 @@ public class ApplicationController {
 		filasAlumnos.clear();
 		for (int i = 0; i < listaalumnos.size(); i++) {
 			filasAlumnos.add(new Alumnos(listaalumnos.get(i).getIdAlumno(), listaalumnos.get(i).getNombre(),
-					listaalumnos.get(i).getApellidos(), listaalumnos.get(i).getTelefono(),
-					listaalumnos.get(i).getCorreo(), listaalumnos.get(i).getDni()));
+					listaalumnos.get(i).getApellidos(), listaalumnos.get(i).getTelefono(), listaalumnos.get(i).getDni(),
+					listaalumnos.get(i).getCorreo()));
 		}
 
 		tablealumnosTab3.setItems(filasAlumnos);

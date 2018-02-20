@@ -24,7 +24,7 @@ public class Alumnos implements java.io.Serializable {
 	}
 
 
-	public Alumnos(String nombre, String apellidos, String telefono, String correo, String dni) {
+	public Alumnos(String nombre, String apellidos, String telefono, String dni, String correo) {
 		this.nombre = nombre;
 		this.apellidos = apellidos;
 		this.telefono = telefono;

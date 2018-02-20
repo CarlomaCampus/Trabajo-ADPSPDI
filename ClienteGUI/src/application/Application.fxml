@@ -258,8 +258,8 @@
                             <TableColumn fx:id="colnombrealumnoTab2" prefWidth="195.0" text="Nombre" />
                               <TableColumn fx:id="colapellidosalumnoTab2" prefWidth="187.0" text="Apellidos" />
                               <TableColumn fx:id="coltelefonoalumnoTab2" prefWidth="121.0" text="Teléfono" />
-                              <TableColumn fx:id="colcorreoalumnoTab2" prefWidth="102.0" text="Correo" />
                               <TableColumn fx:id="coldnialumnoTab2" minWidth="8.0" prefWidth="132.0" text="DNI" />
+                              <TableColumn fx:id="colcorreoalumnoTab2" prefWidth="102.0" text="Correo" />
                           </columns>
                         </TableView>
                         <TableView fx:id="tableciclosTab2" layoutX="29.0" layoutY="90.0" onMouseClicked="#cicloseleccionado" prefHeight="219.0" prefWidth="782.0" visible="false">
@@ -335,8 +335,8 @@
                               <TableColumn fx:id="colnombrealumnoTab3" prefWidth="195.0" text="Nombre" />
                               <TableColumn fx:id="colapellidosalumnoTab3" prefWidth="187.0" text="Apellidos" />
                               <TableColumn fx:id="coltelefonoalumnoTab3" prefWidth="121.0" text="Teléfono" />
-                              <TableColumn fx:id="colcorreoalumnoTab3" prefWidth="102.0" text="Correo" />
                               <TableColumn fx:id="coldnialumnoTab3" minWidth="8.0" prefWidth="132.0" text="DNI" />
+                              <TableColumn fx:id="colcorreoalumnoTab3" prefWidth="102.0" text="Correo" />
                            </columns>
                         </TableView>
                         <TableView fx:id="tableciclosTab3" layoutX="29.0" layoutY="90.0" prefHeight="219.0" prefWidth="782.0" visible="false">
