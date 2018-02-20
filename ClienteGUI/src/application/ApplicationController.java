@@ -709,7 +709,9 @@ public class ApplicationController {
 			}
 			
 		} catch (Exception e) {
-			info.setText("El programa ha encontrado el siguiente error: " + e.toString());
+			if(e.toString().contains("ConnectException")) {
+			info.setText("Imposible conectar con el servidor.");} else {
+			info.setText("El programa ha encontrado el siguiente error: " + e.toString());}
 			info.setTextFill(Color.web("#8c2a00"));
 			icon.setImage(imagecross);
 		}
